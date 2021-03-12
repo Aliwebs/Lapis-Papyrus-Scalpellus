@@ -4,7 +4,19 @@
   margin: 0;
 }
 body {
-  background-color: white;
+  color: black;
+  font-family: "RocknRoll One", sans-serif;
+}
+
+body button {
+  color: white;
+  display: block;
+  padding: 20px 0px;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border-radius: 20px;
 }
 
 #night {
@@ -19,28 +31,21 @@ body {
   background: black;
   color: white;
 }
-
-#gameWindow {
-  width: 100%;
-  color: black;
-}
-
-#gameWindow button {
-  color: white;
-  border-radius: 20px;
-}
-
-#gameWindow h1 {
-  font-family: "RocknRoll One", sans-serif;
+h1,
+h2,
+p {
   text-align: center;
   margin-bottom: 20px;
   letter-spacing: 2px;
 }
 
-#gameWindow h2 {
-  font-family: "RocknRoll One", sans-serif;
+h2,
+p {
   margin-bottom: 10px;
-  letter-spacing: 2px;
+}
+
+#gameWindow {
+  display: none;
 }
 
 #gameWindow .text-right {
@@ -65,18 +70,9 @@ body {
   width: 50%;
 }
 
-#btnChoices button,
-#btnChoicesCom button {
-  display: block;
+#buttonContainer button {
   width: 60%;
-  padding: 20px 0px;
   margin: 20px auto;
-  cursor: pointer;
-  border: none;
-  font-size: 20px;
-  font-family: "RocknRoll One", sans-serif;
-  letter-spacing: 1px;
-  color: white;
 }
 
 #btnChoices button {
@@ -87,24 +83,21 @@ body {
   background: red;
 }
 
+#outcomeMessage {
+  margin-top: 7%;
+}
+
 #startGame {
-  display: block;
-  padding: 20px 0px;
   width: 30%;
-  margin: 10px auto;
-  cursor: pointer;
-  border: none;
+  margin: 7% auto;
   background-color: #12401d;
-  font-size: 20px;
-  font-family: "RocknRoll One", sans-serif;
-  letter-spacing: 1px;
 }
 
-#gameWindow button:hover {
-  background-color: #cfb263;
+#buttonContainer button:hover {
+  background-color: #4e3d0d;
 }
 
-i {
+button i {
   margin: 0px 10px;
 }
 

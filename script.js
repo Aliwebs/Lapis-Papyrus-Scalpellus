@@ -7,13 +7,14 @@ let time;
 let round = 0;
 
 let roundNum = document.getElementById("roundNum");
+let outcomeMessage = document.getElementById("outcomeMessage");
 
 let targetElement = document.getElementById("gameWindow");
 let counter = document.getElementById("counter");
 let startButton = document.getElementById("startGame");
 
-let chDiv = document.querySelector("#btnChoices");
-let chDivCom = document.querySelector("#btnChoicesCom");
+let chDiv = document.getElementById("btnChoices");
+let chDivCom = document.getElementById("btnChoicesCom");
 
 let playerScore = document.getElementById("playerScore");
 let computerScore = document.getElementById("computerScore");
@@ -82,6 +83,10 @@ function matchOutcome(playerChoice, moves) {
 }
 
 function startGame(moves) {
+  targetElement.style.display = "block";
+  startButton.style.display = "none";
+  startButton.innerText = "Start Again!";
+  outcomeMessage.style.display = "none";
   playerScoreVal = 0;
   computerScoreVal = 0;
   playerScore.innerHTML = playerScoreVal;
@@ -93,13 +98,24 @@ function startGame(moves) {
 
   chDiv.onclick = (event) => {
     if (event.target.nodeName === "BUTTON") {
-      if (round >= 10) {
+      if (round >= 9) {
         if (playerScoreVal > computerScoreVal) {
-          alert("You won!");
+          targetElement.style.display = "none";
+          outcomeMessage.innerText = "You won!";
+          outcomeMessage.style.display = "block";
+          startButton.style.display = "block";
+
         } else if (playerScoreVal === computerScoreVal) {
-          alert("It's a tie!");
+          targetElement.style.display = "none";
+          outcomeMessage.innerText = "It's a tie!";
+          outcomeMessage.style.display = "block";
+          startButton.style.display = "block";
+
         } else {
-          alert("You loose!");
+          targetElement.style.display = "none";
+          outcomeMessage.innerText = "You loose!";
+          outcomeMessage.style.display = "block";
+          startButton.style.display = "block";
         }
       } else {
         round++;
@@ -116,15 +132,16 @@ function startGame(moves) {
 }
 
 function nightMode() {
-  let allText = document.querySelectorAll("h1,h2");
-  if (document.body.style.backgroundColor == "white") {
+  let allText = document.querySelectorAll("h1,h2,p");
+  if (document.body.style.backgroundColor === "white") {
     document.body.style.backgroundColor = "black";
     allText.forEach((e) => (e.style.color = "white"));
-    chDiv.querySelectorAll("button").forEach((button) => {
-      button.style.backgroundColor = "#fcba03";
-    });
+    document.getElementById("night").style.backgroundColor = "white";
+    document.getElementById("night").style.color = "black";
   } else {
     document.body.style.backgroundColor = "white";
     allText.forEach((e) => (e.style.color = "black"));
+    document.getElementById("night").style.backgroundColor = "black";
+    document.getElementById("night").style.color = "white";
   }
 }
