@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=RocknRoll+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: white;
+}
+
+#night {
+  margin: 2px;
+  width: 5%;
+  padding: 0.5%;
+  cursor: pointer;
+  border: none;
+}
+
+#night:hover {
+  background: black;
+  color: white;
+}
+
+#gameWindow {
+  width: 100%;
+  color: black;
+}
+
+#gameWindow button {
+  color: white;
+  border-radius: 20px;
+}
+
+#gameWindow h1 {
+  font-family: "RocknRoll One", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+#gameWindow h2 {
+  font-family: "RocknRoll One", sans-serif;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+#gameWindow .text-right {
+  float: right;
+}
+
+#computerChoice {
+  text-align: center;
+}
+
+#scoreBoard h2 {
+  display: inline-block;
+  margin: 0px 20px;
+}
+
+#buttonContainer {
+  display: flex;
+}
+
+#btnChoices,
+#btnChoicesCom {
+  width: 50%;
+}
+
+#btnChoices button,
+#btnChoicesCom button {
+  display: block;
+  width: 60%;
+  padding: 20px 0px;
+  margin: 20px auto;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  font-family: "RocknRoll One", sans-serif;
+  letter-spacing: 1px;
+  color: white;
+}
+
+#btnChoices button {
+  background: #fcba03;
+}
+
+#btnChoicesCom button {
+  background: red;
+}
+
+#startGame {
+  display: block;
+  padding: 20px 0px;
+  width: 30%;
+  margin: 10px auto;
+  cursor: pointer;
+  border: none;
+  background-color: #12401d;
+  font-size: 20px;
+  font-family: "RocknRoll One", sans-serif;
+  letter-spacing: 1px;
+}
+
+#gameWindow button:hover {
+  background-color: #cfb263;
+}
+
+i {
+  margin: 0px 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #buttonContainer {
+    display: block;
+  }
+  #buttonContainer div {
+    display: inline-block;
+  }
+  #computerChoice {
+    display: block;
+  }
+  #btnChoicesCom {
+    display: none;
+  }
+}
