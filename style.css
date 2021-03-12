@@ -87,9 +87,22 @@ p {
   margin-top: 7%;
 }
 
+#enterName {
+  display: block;
+  margin: 3% auto;
+  padding: 20px 0;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  background: black;
+  font-size: 20px;
+  width: 30%;
+  text-align: center;
+}
+
 #startGame {
   width: 30%;
-  margin: 7% auto;
+  margin: 0 auto;
   background-color: #12401d;
 }
 
@@ -99,19 +112,4 @@ p {
 
 button i {
   margin: 0px 10px;
-}
-
-@media only screen and (max-width: 600px) {
-  #buttonContainer {
-    display: block;
-  }
-  #buttonContainer div {
-    display: inline-block;
-  }
-  #computerChoice {
-    display: block;
-  }
-  #btnChoicesCom {
-    display: none;
-  }
 }
