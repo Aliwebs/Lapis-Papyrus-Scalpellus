@@ -1,13 +1,11 @@
 const playerName = document.getElementById("enterName");
-const moves = ["Lapis", "Papyrus", "Scalpellus"];
+const availableMoves = ["Lapis", "Papyrus", "Scalpellus"];
 
 let playerChoices = {};
 let computerChoices = {};
 let round = 0;
 let playerScoreVal = 0;
 let computerScoreVal = 0;
-
-
 
 let targetElement = document.getElementById("gameWindow");
 let outcomeMessage = document.getElementById("outcomeMessage");
@@ -18,12 +16,10 @@ let playerScore = document.getElementById("playerScore");
 let roundNum = document.getElementById("roundNum");
 let computerScore = document.getElementById("computerScore");
 
-//setting player name
-document.getElementById("playerName").innerText = playerName.value;
 
-//Create function that will add the buttons doing this here so the moves are the names in the buttons
-const createButtons = (moves, targetDiv) => {
-  moves.forEach((move) => {
+//Create function that will add the buttons doing this here so the availableMoves are the names in the buttons
+const createButtons = (availableMoves, targetDiv) => {
+  availableMoves.forEach((move) => {
     let button = document.createElement("button");
     button.setAttribute("value", move);
     button.setAttribute("class", move);
@@ -47,19 +43,20 @@ const createButtons = (moves, targetDiv) => {
 //garbing the target divs and running the function above with the both divs
 let chDiv = document.getElementById("btnChoices");
 let chDivCom = document.getElementById("btnChoicesCom");
-createButtons(moves, chDiv);
-createButtons(moves, chDivCom);
+createButtons(availableMoves, chDiv);
+createButtons(availableMoves, chDivCom);
 
 //choose a random number
-const chooseMove = moves => moves[Math.floor(Math.random() * 3)];
+const chooseMove = options => options[Math.floor(Math.random() * 3)];
 
-
-const matchOutcome = (playerChoice, moves) => {
+const matchOutcome = (playerChoice, availableMoves) => {
   //get computer and player choices 
-  let computerChoice = chooseMove(moves);
+  let computerChoice = chooseMove(availableMoves);
   playerChoices[round] = playerChoice;
   computerChoices[round] = computerChoice;
   //highlight randomly selected button
+  let displayChoice = document.getElementById("displayChoice");
+  displayChoice.innerText = computerChoice;
   chDivCom.childNodes.forEach((button) => {
     if (button.value === computerChoice) {
       button.style.backgroundColor = "#f87f65";
@@ -68,15 +65,15 @@ const matchOutcome = (playerChoice, moves) => {
   //check the game outcome
   if (computerChoice === playerChoice) {
   } else if (
-    (playerChoice === moves[0] && computerChoice === moves[1]) ||
-    (playerChoice === moves[1] && computerChoice === moves[2]) ||
-    (playerChoice === moves[2] && computerChoice === moves[0])
+    (playerChoice === availableMoves[0] && computerChoice === availableMoves[1]) ||
+    (playerChoice === availableMoves[1] && computerChoice === availableMoves[2]) ||
+    (playerChoice === availableMoves[2] && computerChoice === availableMoves[0])
   ) {
     computerScoreVal++;
   } else if (
-    (playerChoice === moves[0] && computerChoice === moves[2]) ||
-    (playerChoice === moves[1] && computerChoice === moves[0]) ||
-    (playerChoice === moves[2] && computerChoice === moves[1])
+    (playerChoice === availableMoves[0] && computerChoice === availableMoves[2]) ||
+    (playerChoice === availableMoves[1] && computerChoice === availableMoves[0]) ||
+    (playerChoice === availableMoves[2] && computerChoice === availableMoves[1])
   ) {
     playerScoreVal++;
   }
@@ -90,7 +87,7 @@ const defaultValues = () => {
   startButton.style.display = "none";
   startButton.innerText = "Start Again!";
   outcomeMessage.style.display = "none";
-  playerName.value = "";
+  document.getElementById("playerName").innerText = playerName.value;
   playerName.remove();
   playerScoreVal = 0;
   computerScoreVal = 0;
@@ -102,9 +99,10 @@ const defaultValues = () => {
   computerChoices = {};
 }
 
+
 //gets called when the start button is pressed
-const startGame = moves => {
-  defaultValues();
+const startGame = availableMoves => {
+  defaultValues();;
   chDiv.onclick = (event) => {
     if (event.target.nodeName === "BUTTON") {
       if (round >= 9) {
@@ -124,8 +122,8 @@ const startGame = moves => {
         computerButtons.forEach((button) => {
           button.style.backgroundColor = "red";
         });
-        //call function passing the list of moves and the player choice as arguments
-        matchOutcome(event.target.value, moves);
+        //call function passing the list of availableMoves and the player choice as arguments
+        matchOutcome(event.target.value, availableMoves);
       }
     }
   };
@@ -157,4 +155,6 @@ function nightMode() {
     playerName.style.color = "white";
   }
 }
+
+
 
