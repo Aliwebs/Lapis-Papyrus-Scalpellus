@@ -139,7 +139,7 @@ const gameFinish = message => {
 }
 
 function nightMode() {
-  let allText = document.querySelectorAll("h1,h2,p");
+  let allText = document.querySelectorAll("h1,h2,h3,p");
   if (document.body.style.backgroundColor === "white") {
     document.body.style.backgroundColor = "black";
     allText.forEach((e) => (e.style.color = "white"));
