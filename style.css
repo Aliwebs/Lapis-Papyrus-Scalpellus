@@ -48,11 +48,9 @@ p {
   margin-bottom: 10px;
 }
 
-#gameWindow {
-  display: none;
-}
-
-#computerChoice {
+#gameWindow,
+#computerChoice,
+#phoneWelcome {
   display: none;
 }
 
@@ -133,6 +131,9 @@ button i {
   #btnChoicesCom {
     display: none;
   }
+  #computerWelcome {
+    display: none;
+  }
   #computerChoice {
     display: block;
   }
@@ -162,5 +163,8 @@ button i {
   #enterName,
   #startGame {
     width: 90%;
+  }
+  #phoneWelcome {
+    display: block;
   }
 }
