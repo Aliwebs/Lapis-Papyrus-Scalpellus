@@ -87,7 +87,8 @@ const defaultValues = () => {
   startButton.style.display = "none";
   startButton.innerText = "Start Again!";
   outcomeMessage.style.display = "none";
-  document.getElementById("playerName").innerText = playerName.value;
+  document.querySelectorAll(".playerName").forEach(element => element.innerText = playerName.value);
+  playerName.value = "";
   playerName.remove();
   playerScoreVal = 0;
   computerScoreVal = 0;
