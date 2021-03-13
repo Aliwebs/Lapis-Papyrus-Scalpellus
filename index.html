@@ -1,33 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lapis Papyrus Scalpellus</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <button id="night" onclick="nightMode()"><i class="fas fa-moon"></i></button>
-<div id="gameWindow">
-  <h1>Lapis, Papyrus, Scalpellus. Go!</h1>
-  <h2 style="margin: 10px 20px; text-align: center; font-size: 18px;">To play just click start and then click on one of the options on the left side the computer will choose an option too at the same time as you do. After 10 round the winner will be decided. You can play again by pressing start.</h2>
-  <div id="scoreBoard">
-    <h1>Round Number: <span id="roundNum"></span></h1>
-    <h2>Player Wins <span id="playerScore" value="0">0</span></h2>
-    <h2 class="text-right">Computer wins <span id="computerScore" value="0">0</span></h2>
-    <h2 style="display: none;" id="computerChoice">Computer selected: <span></span></h2>
-  </div>
-  <div id="buttonContainer">
-    <div id="btnChoices">
-    </div>
-    <div id="btnChoicesCom">
-    </div>
-  </div>
-  <button id="startGame" value="startGame" onclick="startGame(moves)">Start!</button>
-</div>
 
-<script src="https://kit.fontawesome.com/d67bc14ae8.js" crossorigin="anonymous"></script>
-<script src="script.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lapis Papyrus Scalpellus</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body style="background-color: white;">
+
+  <button id="night" onclick="nightMode()">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <header>
+    <h1>Lapis, Papyrus, Scalpellus. Go!</h1>
+    <p style="margin: 10px 20px; font-size: 18px">
+      Welcome <span id="playerName"></span>. <br /> To play just click start and then click on one of the options on the
+      left side the computer will choose an option too at the same time as you
+      do. After 10 round the winner will be decided. You can play again by
+      pressing start.
+    </p>
+  </header>
+
+  <section>
+
+    <div id="gameWindow">
+      <div id="scoreBoard">
+        <h1>Round Number: <span id="roundNum"></span></h1>
+        <h2>Player Wins <span id="playerScore" value="0">0</span></h2>
+        <h2 class="text-right">
+          Computer wins <span id="computerScore" value="0">0</span>
+        </h2>
+        <!--<h2 style="display: none;" id="computerChoice">
+        Computer selected: <span></span>
+        </h2>-->
+      </div>
+
+      <div id="buttonContainer">
+        <div id="btnChoices"></div>
+        <div id="btnChoicesCom"></div>
+      </div>
+
+    </div>
+
+    <h1 id="outcomeMessage" style="display: none;"></h1>
+    <input id="enterName" type="text" placeholder="Enter your name: ">
+    <button id="startGame" value="startGame" onclick="startGame(moves)">
+      Start!
+    </button>
+
+  </section>
+
+  <script src="https://kit.fontawesome.com/d67bc14ae8.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

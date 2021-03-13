@@ -4,7 +4,19 @@
   margin: 0;
 }
 body {
-  background-color: white;
+  color: black;
+  font-family: "RocknRoll One", sans-serif;
+}
+
+body button {
+  color: white;
+  display: block;
+  padding: 20px 0px;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border-radius: 20px;
 }
 
 #night {
@@ -19,28 +31,21 @@ body {
   background: black;
   color: white;
 }
-
-#gameWindow {
-  width: 100%;
-  color: black;
-}
-
-#gameWindow button {
-  color: white;
-  border-radius: 20px;
-}
-
-#gameWindow h1 {
-  font-family: "RocknRoll One", sans-serif;
+h1,
+h2,
+p {
   text-align: center;
   margin-bottom: 20px;
   letter-spacing: 2px;
 }
 
-#gameWindow h2 {
-  font-family: "RocknRoll One", sans-serif;
+h2,
+p {
   margin-bottom: 10px;
-  letter-spacing: 2px;
+}
+
+#gameWindow {
+  display: none;
 }
 
 #gameWindow .text-right {
@@ -65,18 +70,9 @@ body {
   width: 50%;
 }
 
-#btnChoices button,
-#btnChoicesCom button {
-  display: block;
+#buttonContainer button {
   width: 60%;
-  padding: 20px 0px;
   margin: 20px auto;
-  cursor: pointer;
-  border: none;
-  font-size: 20px;
-  font-family: "RocknRoll One", sans-serif;
-  letter-spacing: 1px;
-  color: white;
 }
 
 #btnChoices button {
@@ -87,38 +83,33 @@ body {
   background: red;
 }
 
-#startGame {
+#outcomeMessage {
+  margin-top: 7%;
+}
+
+#enterName {
   display: block;
-  padding: 20px 0px;
-  width: 30%;
-  margin: 10px auto;
-  cursor: pointer;
+  margin: 3% auto;
+  padding: 20px 0;
   border: none;
-  background-color: #12401d;
+  border-radius: 14px;
+  color: white;
+  background: black;
   font-size: 20px;
-  font-family: "RocknRoll One", sans-serif;
-  letter-spacing: 1px;
+  width: 30%;
+  text-align: center;
 }
 
-#gameWindow button:hover {
-  background-color: #cfb263;
+#startGame {
+  width: 30%;
+  margin: 0 auto;
+  background-color: #12401d;
 }
 
-i {
+#buttonContainer button:hover {
+  background-color: #4e3d0d;
+}
+
+button i {
   margin: 0px 10px;
-}
-
-@media only screen and (max-width: 600px) {
-  #buttonContainer {
-    display: block;
-  }
-  #buttonContainer div {
-    display: inline-block;
-  }
-  #computerChoice {
-    display: block;
-  }
-  #btnChoicesCom {
-    display: none;
-  }
 }
