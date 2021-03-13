@@ -17,12 +17,13 @@
 
   <header>
     <h1>Lapis, Papyrus, Scalpellus. Go!</h1>
-    <p style="margin: 10px 20px; font-size: 18px">
+    <p id="computerWelcome">
       Welcome <span id="playerName"></span>. <br /> To play just click start and then click on one of the options on the
       left side the computer will choose an option too at the same time as you
       do. After 10 round the winner will be decided. You can play again by
       pressing start.
     </p>
+    <p id="phoneWelcome">Welcome <span id="playerName"></span>. <br />You got 10 moves to decide your destiny.</p>
   </header>
 
   <section>
@@ -34,9 +35,9 @@
         <h2 class="text-right">
           Computer wins <span id="computerScore" value="0">0</span>
         </h2>
-        <!--<h2 style="display: none;" id="computerChoice">
-        Computer selected: <span></span>
-        </h2>-->
+        <h3 id="computerChoice">
+          Computer selected: <br /><span id="displayChoice"></span>
+        </h3>
       </div>
 
       <div id="buttonContainer">
@@ -48,7 +49,7 @@
 
     <h1 id="outcomeMessage" style="display: none;"></h1>
     <input id="enterName" type="text" placeholder="Enter your name: ">
-    <button id="startGame" value="startGame" onclick="startGame(moves)">
+    <button id="startGame" value="startGame" onclick="startGame(availableMoves)">
       Start!
     </button>
 

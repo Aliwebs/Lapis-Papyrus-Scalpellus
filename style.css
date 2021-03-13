@@ -19,6 +19,10 @@ body button {
   border-radius: 20px;
 }
 
+header {
+  margin: 0 10px;
+}
+
 #night {
   margin: 2px;
   width: 5%;
@@ -48,6 +52,10 @@ p {
   display: none;
 }
 
+#computerChoice {
+  display: none;
+}
+
 #gameWindow .text-right {
   float: right;
 }
@@ -61,6 +69,13 @@ p {
   margin: 0px 20px;
 }
 
+#scoreBoard h3 {
+  font-size: 20px;
+}
+#scoreBoard p {
+  margin: 10px 20px;
+  font-size: 18px;
+}
 #buttonContainer {
   display: flex;
 }
@@ -112,4 +127,40 @@ p {
 
 button i {
   margin: 0px 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #btnChoicesCom {
+    display: none;
+  }
+  #computerChoice {
+    display: block;
+  }
+  #gameWindow .text-right {
+    float: none;
+  }
+  #scoreBoard {
+    text-align: center;
+  }
+  #scoreBoard p {
+    font-size: 10px;
+    margin: 10px;
+  }
+  #buttonContainer {
+    display: block;
+  }
+  #btnChoices {
+    width: 100%;
+  }
+  #night {
+    margin: 2px;
+    width: 14%;
+    padding: 0.5%;
+    cursor: pointer;
+    border: none;
+  }
+  #enterName,
+  #startGame {
+    width: 90%;
+  }
 }
