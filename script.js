@@ -11,7 +11,7 @@ let targetElement = document.getElementById("gameWindow");
 let outcomeMessage = document.getElementById("outcomeMessage");
 let startButton = document.getElementById("startGame");
 
-
+const autcomeMessage = document.getElementById("computerWelcome");
 let playerScore = document.getElementById("playerScore");
 let roundNum = document.getElementById("roundNum");
 let computerScore = document.getElementById("computerScore");
@@ -59,7 +59,7 @@ const matchOutcome = (playerChoice, availableMoves) => {
   displayChoice.innerText = computerChoice;
   chDivCom.childNodes.forEach((button) => {
     if (button.value === computerChoice) {
-      button.style.backgroundColor = "#f87f65";
+      button.style.backgroundColor = "#b63b4a";
     }
   });
   //check the game outcome
@@ -88,8 +88,9 @@ const defaultValues = () => {
   startButton.innerText = "Start Again!";
   outcomeMessage.style.display = "none";
   document.querySelectorAll(".playerName").forEach(element => element.innerText = playerName.value);
-  playerName.value = "";
-  playerName.remove();
+  autcomeMessage.style.visibility = "visible";
+  autcomeMessage.style.opacity = 1;
+  playerName.style.display = "none";
   playerScoreVal = 0;
   computerScoreVal = 0;
   playerScore.innerHTML = playerScoreVal;
@@ -101,9 +102,10 @@ const defaultValues = () => {
 }
 
 
+
 //gets called when the start button is pressed
 const startGame = availableMoves => {
-  defaultValues();;
+  defaultValues();
   chDiv.onclick = (event) => {
     if (event.target.nodeName === "BUTTON") {
       if (round >= 9) {
@@ -121,7 +123,7 @@ const startGame = availableMoves => {
         //resetting computer choosen buttons to default color
         let computerButtons = chDivCom.querySelectorAll("button");
         computerButtons.forEach((button) => {
-          button.style.backgroundColor = "red";
+          button.style.backgroundColor = "#E0DDB5";
         });
         //call function passing the list of availableMoves and the player choice as arguments
         matchOutcome(event.target.value, availableMoves);
@@ -130,6 +132,10 @@ const startGame = availableMoves => {
   };
 }
 
+startButton.addEventListener('click', event => {
+  event.preventDefault();
+  startGame(availableMoves);
+})
 
 const gameFinish = message => {
   targetElement.style.display = "none";
@@ -140,18 +146,16 @@ const gameFinish = message => {
 
 function nightMode() {
   let allText = document.querySelectorAll("h1,h2,h3,p");
-  if (document.body.style.backgroundColor === "white") {
+  if (document.body.style.backgroundColor === "rgb(123, 60, 78)") {
     document.body.style.backgroundColor = "black";
-    allText.forEach((e) => (e.style.color = "white"));
     document.getElementById("night").style.backgroundColor = "white";
     document.getElementById("night").style.color = "black";
     playerName.style.backgroundColor = "white";
     playerName.style.color = "black";
   } else {
-    document.body.style.backgroundColor = "white";
-    allText.forEach((e) => (e.style.color = "black"));
+    document.body.style.backgroundColor = "rgb(123, 60, 78)";
     document.getElementById("night").style.backgroundColor = "black";
-    document.getElementById("night").style.color = "white";
+    document.getElementById("night").style.color = "rgb(123, 60, 78)";
     playerName.style.backgroundColor = "black";
     playerName.style.color = "white";
   }
